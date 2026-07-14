@@ -1,0 +1,19 @@
+# Dataset
+dataset/
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# Generated uploads
+static/uploaded/
+static/uploads/
+
+# macOS
+.DS_Store

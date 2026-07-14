@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌱 Smart Agriculture Dashboard</h1>
+
+    <div class="sensor-container">
+        <div class="sensor">🌡️ Temperature: {{ sensor_data.temperature }} °C</div>
+        <div class="sensor">💧 Humidity: {{ sensor_data.humidity }} %</div>
+        <div class="sensor">🌾 Soil Moisture: {{ sensor_data.soil_moisture }} %</div>
+        <div class="sensor">🔆 Light Intensity: {{ sensor_data.light }} lux</div>
+    </div>
+
+    <a href="{{ esp32_link }}" target="_blank" class="esp-link">🔗 Visit ESP32 Webpage</a>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Predict Disease</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h3>{{ result }}</h3>
+        {% if img_path %}
+        <img src="{{ img_path }}" alt="Uploaded Leaf" class="result-img">
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
