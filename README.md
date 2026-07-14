@@ -144,7 +144,7 @@ The model classifies the following tomato leaf diseases:
 
 
 # 📸 Application Screenshots
-```
+
 ## Home Page
 
 ![Home Page](images/homepage.png)
@@ -152,8 +152,6 @@ The model classifies the following tomato leaf diseases:
 ## Confusion Matrix
 
 ![Confusion Matrix](images/confusion_matrix.png)
-
-```
 
 # 📂 Project Structure
 
